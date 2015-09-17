@@ -1,0 +1,6 @@
+<h1>Dashboard#list</h1>
+
+
+<% @quotes.each do |quote| %>
+  <blockquote><%= quote.the_quote %><cite><%= quote.author %> - <%= quote.date.year %></cite></blockquote>
+<% end %>

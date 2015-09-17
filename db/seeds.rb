@@ -1,7 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+100.times do
+  buzzwords = []
+  (5..20).to_a.sample.times do
+    buzzwords << Faker::Company.buzzword
+  end
+  quote = Quote.new
+  quote.the_quote = buzzwords.join(" ").capitalize + "."
+  quote.author = Faker::Name.name
+  quote.date = Faker::Time.backward((500 * 365), :evening)
+  quote.save
+end
