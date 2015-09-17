@@ -47,3 +47,4 @@ group :development do
 end
 
 gem 'faker', '~> 1.5'
+gem 'rails_12factor'
